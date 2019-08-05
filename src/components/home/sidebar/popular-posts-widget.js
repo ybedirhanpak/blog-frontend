@@ -1,6 +1,22 @@
 import React, { Component } from "react";
 
 export default class PopularPostsWidget extends Component {
+  generatePopularPosts = postList => {
+    return postList.map((post, index) => (
+      <div className="single-popular-post d-flex flex-row" key={index}>
+        <div className="popular-thumb">
+          <img className="img-fluid" src={post.thumbImage} alt="" />
+        </div>
+        <div className="popular-details">
+          <h6>
+            <a href="">{post.title}</a>
+          </h6>
+          <p>{post.publishDate}</p>
+        </div>
+      </div>
+    ));
+  };
+
   render() {
     return (
       <div className="single-widget popular-posts-widget">
@@ -15,129 +31,11 @@ export default class PopularPostsWidget extends Component {
           </div>
           <div className="jq-tab-content-wrapper">
             <div className="jq-tab-content active" data-tab="1">
-              <div className="single-popular-post d-flex flex-row">
-                <div className="popular-thumb">
-                  <img
-                    className="img-fluid"
-                    src="img/posts/carousel/stories1.jpg"
-                    alt=""
-                  />
-                </div>
-                <div className="popular-details">
-                  <h6>
-                    <a href="">2nd Gen Smoke Alarm get up from sleep</a>
-                  </h6>
-                  <p>September 14, 2018</p>
-                </div>
-              </div>
-              <div className="single-popular-post d-flex flex-row">
-                <div className="popular-thumb">
-                  <img
-                    className="img-fluid"
-                    src="img/posts/carousel/stories2.jpg"
-                    alt=""
-                  />
-                </div>
-                <div className="popular-details">
-                  <h6>
-                    <a href="">2nd Gen Smoke Alarm get up from sleep</a>
-                  </h6>
-                  <p>September 14, 2018</p>
-                </div>
-              </div>
-              <div className="single-popular-post d-flex flex-row">
-                <div className="popular-thumb">
-                  <img
-                    className="img-fluid"
-                    src="img/posts/carousel/stories3.jpg"
-                    alt=""
-                  />
-                </div>
-                <div className="popular-details">
-                  <h6>
-                    <a href="">2nd Gen Smoke Alarm get up from sleep</a>
-                  </h6>
-                  <p>September 14, 2018</p>
-                </div>
-              </div>
-              <div className="single-popular-post d-flex flex-row">
-                <div className="popular-thumb">
-                  <img
-                    className="img-fluid"
-                    src="img/posts/carousel/stories4.jpg"
-                    alt=""
-                  />
-                </div>
-                <div className="popular-details">
-                  <h6>
-                    <a href="">2nd Gen Smoke Alarm get up from sleep</a>
-                  </h6>
-                  <p>September 14, 2018</p>
-                </div>
-              </div>
+              {this.generatePopularPosts(this.props.popularPosts)}
             </div>
 
             <div className="jq-tab-content active" data-tab="2">
-              <div className="single-popular-post d-flex flex-row">
-                <div className="popular-thumb">
-                  <img
-                    className="img-fluid"
-                    src="img/posts/carousel/stories2.jpg"
-                    alt=""
-                  />
-                </div>
-                <div className="popular-details">
-                  <h6>
-                    <a href="">2nd Gen Smoke Alarm get up from sleep</a>
-                  </h6>
-                  <p>September 14, 2018</p>
-                </div>
-              </div>
-              <div className="single-popular-post d-flex flex-row">
-                <div className="popular-thumb">
-                  <img
-                    className="img-fluid"
-                    src="img/posts/carousel/stories3.jpg"
-                    alt=""
-                  />
-                </div>
-                <div className="popular-details">
-                  <h6>
-                    <a href="">2nd Gen Smoke Alarm get up from sleep</a>
-                  </h6>
-                  <p>September 14, 2018</p>
-                </div>
-              </div>
-              <div className="single-popular-post d-flex flex-row">
-                <div className="popular-thumb">
-                  <img
-                    className="img-fluid"
-                    src="img/posts/carousel/stories1.jpg"
-                    alt=""
-                  />
-                </div>
-                <div className="popular-details">
-                  <h6>
-                    <a href="">2nd Gen Smoke Alarm get up from sleep</a>
-                  </h6>
-                  <p>September 14, 2018</p>
-                </div>
-              </div>
-              <div className="single-popular-post d-flex flex-row">
-                <div className="popular-thumb">
-                  <img
-                    className="img-fluid"
-                    src="img/posts/carousel/stories4.jpg"
-                    alt=""
-                  />
-                </div>
-                <div className="popular-details">
-                  <h6>
-                    <a href="">2nd Gen Smoke Alarm get up from sleep</a>
-                  </h6>
-                  <p>September 14, 2018</p>
-                </div>
-              </div>
+              {this.generatePopularPosts(this.props.latestPosts)}
             </div>
           </div>
         </div>

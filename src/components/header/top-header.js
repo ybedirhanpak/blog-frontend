@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import logo from "../../logo.svg";
+import "./header-style.css";
 
 export default class TopHeader extends Component {
   render() {
@@ -8,7 +10,7 @@ export default class TopHeader extends Component {
           <div className="row align-items-center justify-content-between">
             <div className="col-lg-6 col-md-6 col-sm-6">
               <a href="index.html" className="logo">
-                <img src="img/logo.png" alt="Logo" />
+                <img className="app-logo" src={logo} alt="Logo" />
               </a>
             </div>
             <div className="col-lg-6 col-md-6 col-sm-6 search-trigger">
