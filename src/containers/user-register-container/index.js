@@ -92,88 +92,88 @@ class UserRegister extends Component {
           <div className="col-sm-12 col-md-2 col-lg-3" />
           <div className="col-sm-12 col-md-8 col-lg-6">
             <div className="container-fluid register">
-              <h2 class="mb-30">Registration</h2>
+              <h2 className="mb-30">Registration</h2>
               <form action="#" autoComplete="off">
-                <div class="mt-10">
+                <div className="mt-10">
                   <input
                     type="text"
                     name="firstName"
                     placeholder="First Name"
-                    class="single-input-primary"
+                    className="single-input-primary"
                     onChange={this.handleChange}
                   />
                   {this.state.firstNameError === true ? (
-                    <div class="alert alert-danger" role="alert">
+                    <div className="alert alert-danger" role="alert">
                       Please fill your Name!
                     </div>
                   ) : null}
                 </div>
-                <div class="mt-10">
+                <div className="mt-10">
                   <input
                     type="text"
                     name="lastName"
                     placeholder="Last Name"
-                    class="single-input-primary"
+                    className="single-input-primary"
                     onChange={this.handleChange}
                   />
                   {this.state.lastNameError === true ? (
-                    <div class="alert alert-danger" role="alert">
+                    <div className="alert alert-danger" role="alert">
                       Please fill your Last Name!
                     </div>
                   ) : null}
                 </div>
-                <div class="mt-10">
+                <div className="mt-10">
                   <input
                     type="text"
                     name="username"
                     placeholder="Username"
-                    class="single-input-primary"
+                    className="single-input-primary"
                     onChange={this.handleChange}
                   />
                   {this.state.usernameError === true ? (
-                    <div class="alert alert-danger" role="alert">
+                    <div className="alert alert-danger" role="alert">
                       Please fill your Username!
                     </div>
                   ) : null}
                 </div>
-                <div class="mt-10">
+                <div className="mt-10">
                   <input
                     type="email"
                     name="email"
                     placeholder="Email address"
-                    class="single-input-primary"
+                    className="single-input-primary"
                     onChange={this.handleChange}
                   />
                   {this.state.emailError === true ? (
-                    <div class="alert alert-danger" role="alert">
+                    <div className="alert alert-danger" role="alert">
                       Please fill your e-mail!
                     </div>
                   ) : null}
                 </div>
-                <div class="mt-10">
+                <div className="mt-10">
                   <input
                     type="password"
                     name="password1"
                     placeholder="Password"
-                    class="single-input-primary"
+                    className="single-input-primary"
                     onChange={this.handleChange}
                   />
                   {this.state.password1Error === true ? (
-                    <div class="alert alert-danger" role="alert">
+                    <div className="alert alert-danger" role="alert">
                       Please fill your Password!
                     </div>
                   ) : null}
                 </div>
-                <div class="mt-10">
+                <div className="mt-10">
                   <input
                     type="password"
                     name="password2"
                     placeholder="Please type your password again"
-                    class="single-input-primary"
+                    className="single-input-primary"
                     onChange={this.handleChange}
                   />
                   {this.state.password2Error === true ? (
-                    <div class="alert alert-danger" role="alert">
+                    <div className="alert alert-danger" role="alert">
                       Please fill your password again!
                     </div>
                   ) : null}
@@ -183,13 +183,13 @@ class UserRegister extends Component {
                   <input
                     type="date"
                     name="bday"
-                    class="single-input-primary"
+                    className="single-input-primary"
                     placeholder="Birthday"
                     onChange={this.handleChange}
                   />
                 </div>
                 {this.state.bdayError === true ? (
-                  <div class="alert alert-danger" role="alert">
+                  <div className="alert alert-danger" role="alert">
                     Please fill your bday!
                   </div>
                 ) : null}
@@ -197,7 +197,7 @@ class UserRegister extends Component {
                 <div className="mt-10 gender-form">
                   <h3 className="gender-header">Gender</h3>
                   <select
-                    class="single-input-primary gender-dropdown"
+                    className="single-input-primary gender-dropdown"
                     name="gender"
                     onChange={this.handleChange}
                   >
@@ -208,24 +208,24 @@ class UserRegister extends Component {
                   </select>
                 </div>
                 {this.state.genderError === true ? (
-                  <div class="alert alert-danger" role="alert">
+                  <div className="alert alert-danger" role="alert">
                     Please select your gender!
                   </div>
                 ) : null}
 
                 {this.state.passwordNotEqualError === true ? (
-                  <div class="alert alert-danger" role="alert">
+                  <div className="alert alert-danger" role="alert">
                     Your passwords are not equal!
                   </div>
                 ) : null}
 
                 <button
                   href="#"
-                  class="genric-btn primary-border circle arrow"
+                  className="genric-btn primary-border circle arrow"
                   onClick={this.submitRegister}
                 >
                   Join Us!
-                  <span class="lnr lnr-arrow-right" />
+                  <span className="lnr lnr-arrow-right" />
                 </button>
               </form>
               <br /> <br />

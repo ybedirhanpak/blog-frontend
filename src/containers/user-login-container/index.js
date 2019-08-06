@@ -43,39 +43,39 @@ class UserLogin extends Component {
           <div className="row login-row">
             <div className="col-md-3" />
             <div className="col-md-6">
-              <h2 class="mb-30">Login</h2>
+              <h2 className="mb-30">Login</h2>
               <form action="#" autoComplete="off">
-                <div class="mt-10">
+                <div className="mt-10">
                   <input
                     type="text"
                     name="username"
                     placeholder="Username"
-                    class="single-input-primary"
+                    className="single-input-primary"
                     onChange={this.handleChange}
                   />
                 </div>
-                <div class="mt-10">
+                <div className="mt-10">
                   <input
                     type="password"
                     name="password1"
                     placeholder="Password"
-                    class="single-input-primary"
+                    className="single-input-primary"
                     onChange={this.handleChange}
                   />
                 </div>
                 <button
                   href="#"
-                  class="genric-btn primary-border circle arrow login-button"
+                  className="genric-btn primary-border circle arrow login-button"
                   onClick={this.submitLogin}
                 >
                   Login!
-                  <span class="lnr lnr-arrow-right" />
+                  <span className="lnr lnr-arrow-right" />
                 </button>
               </form>
               <br /> <br />
               {/* UI MESSAGES */}
               {this.state.fillAreasError === true ? (
-                <div class="alert alert-danger" role="alert">
+                <div className="alert alert-danger" role="alert">
                   Please fill your Userame and Password!
                 </div>
               ) : null}

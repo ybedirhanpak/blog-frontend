@@ -14,8 +14,8 @@ import Footer from "./components/footer";
 //Containers
 import HomeContainer from "./containers/home-container";
 import Header from "./components/header";
-import UserRegister from "./containers/user-register";
-import UserLogin from "./containers/user-login";
+import UserRegister from "./containers/user-register-container";
+import UserLogin from "./containers/user-login-container";
 import CreatePostContainer from "./containers/create-post-container";
 import PostDetailsContainer from "./containers/post-details-container";
 
