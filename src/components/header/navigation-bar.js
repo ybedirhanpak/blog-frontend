@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import { Link } from "react-router-dom";
+
 export default class NavigationBar extends Component {
   render() {
     return (
@@ -8,13 +10,13 @@ export default class NavigationBar extends Component {
           <nav id="nav-menu-container">
             <ul className="nav-menu">
               <li className="menu-active">
-                <a href="index.html">Home</a>
+                <Link to="/home">Home</Link>
               </li>
               <li>
-                <a href="category.html">Category</a>
+                <Link to="/category">Category</Link>
               </li>
               <li>
-                <a href="archive.html">Archive</a>
+                <Link to="/create-post">Create Post</Link>
               </li>
               <li className="menu-has-children">
                 <a href="">Pages</a>

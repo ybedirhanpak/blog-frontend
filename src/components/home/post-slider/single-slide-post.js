@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 
+//Route
+import { Link } from "react-router-dom";
+
 export default class SingleSlidePost extends Component {
   render() {
     return (
@@ -13,9 +16,9 @@ export default class SingleSlidePost extends Component {
         </div>
         <div className="post-details">
           <h2>
-            <a href="#">{this.props.post.title}</a>
+            <Link to="/home">{this.props.post.title}</Link>
           </h2>
-          <div className="post-content d-flex justify-content-between">
+          <div className="post-content">
             <div className="post-meta">
               <div className="thumb">
                 <img src={this.props.post.authorImage} alt="Author" />
