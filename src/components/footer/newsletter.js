@@ -17,8 +17,6 @@ export default class Newsletter extends Component {
               <input
                 name="EMAIL"
                 placeholder="Email Address"
-                onfocus="this.placeholder = ''"
-                onblur="this.placeholder = 'Email Address '"
                 required=""
                 type="email"
               />

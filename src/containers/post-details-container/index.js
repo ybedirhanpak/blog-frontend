@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import Post from "./post";
-import Review from "./review";
-import SideBar from "../home/sidebar";
-import PostNavigation from "./post-navigation";
+import Post from "../../components/post-details/post";
+import Review from "../../components/post-details/review";
+import SideBar from "../../components/sidebar";
+import PostNavigation from "../../components/post-details/post-navigation";
 
-export default class index extends Component {
+export default class PostDetailsContainer extends Component {
   render() {
     return (
       <section class="blog_area section-gap single-post-area">
