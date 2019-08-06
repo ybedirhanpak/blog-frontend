@@ -10,11 +10,12 @@ import {
 
 //Components
 import Footer from "./components/footer";
-import Header from "./components/header";
 
 //Containers
 import HomeContainer from "./containers/home-container";
+import Header from "./components/header";
 import CreatePostContainer from "./containers/create-post-container";
+import PostDetailsContainer from "./containers/post-details-container";
 
 function App() {
   return (
@@ -25,11 +26,9 @@ function App() {
         <Switch>
           {/* Home Routes */}
           <Route exact path="/" render={() => <Redirect to="home" />} />
-          <Route path="/home" render={props => <HomeContainer {...props} />} />
-          <Route
-            path="/create-post"
-            render={props => <CreatePostContainer {...props} />}
-          />
+          <Route path="/home" component={HomeContainer} exact />
+          <Route path="/post-details" component={PostDetailsContainer} />
+          <Route path="/create-post" component={CreatePostContainer} />
         </Switch>
         {/* Footer Area */}
         <Footer />
