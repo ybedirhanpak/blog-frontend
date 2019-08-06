@@ -92,8 +92,15 @@ export default class HomeContainer extends Component {
     };
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
+  componentDidUpdate() {
+    window.scrollTo(0, 0);
+  }
+
   render() {
-    console.log("Home container render");
     return (
       <div className="home-container">
         <div className="row">

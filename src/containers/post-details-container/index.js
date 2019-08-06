@@ -7,15 +7,15 @@ import PostNavigation from "../../components/post-details/post-navigation";
 export default class PostDetailsContainer extends Component {
   render() {
     return (
-      <section class="blog_area section-gap single-post-area">
-        <div class="container box_1170">
-          <div class="row">
-            <div class="col-lg-8">
+      <section className="blog_area section-gap single-post-area">
+        <div className="container box_1170">
+          <div className="row">
+            <div className="col-lg-8">
               <Post />
               <PostNavigation />
               <Review />
             </div>
-            <div class="col-lg-4">
+            <div className="col-lg-4">
               <SideBar />
             </div>
           </div>

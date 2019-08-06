@@ -15,7 +15,6 @@ export default class TopPosts extends Component {
   };
 
   render() {
-    console.log("Top posts render");
     return (
       <div className="top-stories-area">
         <div className="container-fluid" style={{ height: "100%" }}>

@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 
 export default class SingleTopPost extends Component {
   render() {
-    console.log("single top post", this.props);
     return (
       <div className="owl-item">
         <div
