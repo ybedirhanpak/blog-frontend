@@ -10,14 +10,7 @@ export default class NavigationBar extends Component {
           <nav id="nav-menu-container">
             <ul className="nav-menu">
               <li className="menu-active">
-<<<<<<< HEAD
-                <a href="/">Home</a>
-              </li>
-              <li>
-                <a href="category.html">Category</a>
-=======
                 <Link to="/home">Home</Link>
->>>>>>> 5ea6cf0978579b43fbfa9a1135324d47ad7c3f6d
               </li>
               <li>
                 <Link to="/create-post">Create Post</Link>

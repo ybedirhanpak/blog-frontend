@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import { MDBContainer, MDBAlert } from "mdbreact";
 
 //Css file
-import "./user-login.css";
+import "./user-login.scss";
 
 class UserLogin extends Component {
   constructor(props) {
@@ -16,13 +15,19 @@ class UserLogin extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
+  componentDidMount() {
+    this.setState({ fillAreasError: false });
+  }
+
   handleChange = event => {
     this.setState({
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
+      fillAreasError: false
     });
   };
 
-  submitLogin = () => {
+  submitLogin = event => {
+    event.preventDefault();
     if (this.state.username === "" || this.state.password1 === "") {
       this.setState({
         fillAreasError: true
@@ -33,12 +38,12 @@ class UserLogin extends Component {
   render() {
     console.log("user register page", this.state);
     return (
-      <div className="login-image">
-        <div className="register">
-          <div className="row">
+      <div className="login-background">
+        <div className="login">
+          <div className="row login-row">
             <div className="col-md-3" />
             <div className="col-md-6">
-              <h3 class="mb-30 login-h3">Login</h3>
+              <h2 class="mb-30">Login</h2>
               <form action="#" autoComplete="off">
                 <div class="mt-10">
                   <input
@@ -68,16 +73,14 @@ class UserLogin extends Component {
                 </button>
               </form>
               <br /> <br />
+              {/* UI MESSAGES */}
+              {this.state.fillAreasError === true ? (
+                <div class="alert alert-danger" role="alert">
+                  Please fill your Userame and Password!
+                </div>
+              ) : null}
             </div>
           </div>
-          {/* UI MESSAGES */}
-          {this.state.fillAreasError === true ? (
-            <MDBContainer>
-              <MDBAlert color="danger">
-                <h5 className="alert-heading"> Please fill all areas </h5>
-              </MDBAlert>
-            </MDBContainer>
-          ) : null}
         </div>
       </div>
     );
