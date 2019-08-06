@@ -1873,22 +1873,17 @@ h6 {
 .header-top {
   line-height: 100px;
 }
-@media (max-width: 575px) {
-  .header-top .col-lg-6 {
-    width: 50%;
-  }
-}
 .header-top .search-trigger {
   text-align: right;
+}
+.header-top .search-trigger .search-icon {
+  color: #415094;
+  font-weight: 500;
 }
 @media (max-width: 960px) {
   .header-top .search-trigger {
     display: none;
   }
-}
-.header-top .search-trigger a {
-  color: #415094;
-  font-weight: 500;
 }
 
 #search_input_box {
@@ -2092,6 +2087,15 @@ h6 {
 
 .nav-menu > li {
   margin-left: 10px;
+}
+
+.mobile-login-register {
+  display: none;
+}
+@media (max-width: 961px) {
+  .mobile-login-register {
+    display: contents;
+  }
 }
 
 .nav-menu ul {

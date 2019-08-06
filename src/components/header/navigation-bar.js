@@ -9,6 +9,12 @@ export default class NavigationBar extends Component {
         <div className="row align-items-center justify-content-center d-flex">
           <nav id="nav-menu-container">
             <ul className="nav-menu">
+              <li className="mobile-login-register">
+                <Link to="/login">Sign In!</Link>
+              </li>
+              <li className="mobile-login-register">
+                <Link to="/register">Sign Up!</Link>
+              </li>
               <li className="menu-active">
                 <Link to="/home">Home</Link>
               </li>
