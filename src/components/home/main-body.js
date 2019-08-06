@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import BodyPosts from "./body-posts";
-import Sidebar from "./sidebar";
+import Sidebar from "../../components/sidebar";
 
 export default class MainBody extends Component {
   constructor(props) {
