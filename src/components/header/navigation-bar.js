@@ -8,7 +8,7 @@ export default class NavigationBar extends Component {
           <nav id="nav-menu-container">
             <ul className="nav-menu">
               <li className="menu-active">
-                <a href="index.html">Home</a>
+                <a href="/">Home</a>
               </li>
               <li>
                 <a href="category.html">Category</a>

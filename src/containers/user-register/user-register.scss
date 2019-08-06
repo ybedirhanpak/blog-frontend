@@ -1,0 +1,67 @@
+.register-background {
+  height: 800px;
+  width: 100%;
+  background-image: url("register-bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.register-row {
+  margin: 0;
+}
+
+.register {
+  padding: 20px;
+  h2 {
+    margin-top: 150px;
+    text-align: center;
+    color: aliceblue;
+    @media (max-width: 991px) {
+      margin-top: 0;
+    }
+  }
+
+  h3 {
+    color: aliceblue;
+    margin-top: 7px;
+  }
+
+  button {
+    margin-top: 10px;
+  }
+
+  .birthday-form {
+    display: flex;
+    align-items: flex-start;
+    @media (max-width: 321px) {
+      margin-right: 110px;
+    }
+
+    .birthday-header {
+      margin-right: 10px;
+    }
+  }
+
+  .gender-form {
+    display: flex;
+    align-items: flex-start;
+    h4 {
+      color: aliceblue;
+      margin-top: 10px;
+      margin-right: 20px;
+      @media (max-width: 991px) {
+        margin-right: 5px;
+      }
+    }
+
+    .gender-header {
+      margin-right: 10px;
+    }
+
+    .gender-dropdown {
+      height: 30px;
+      margin-top: 5px;
+      margin-left: 15px;
+    }
+  }
+}

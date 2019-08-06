@@ -14,6 +14,8 @@ import Footer from "./components/footer";
 //Containers
 import HomeContainer from "./containers/home-container";
 import Header from "./components/header";
+import UserRegister from "./containers/user-register";
+import UserLogin from "./containers/user-login";
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
           {/* Home Routes */}
           <Route exact path="/" render={() => <Redirect to="home" />} />
           <Route path="/home" component={HomeContainer} exact />
+          <Route path="/register" component={UserRegister} />
+          <Route path="/login" component={UserLogin} />
         </Switch>
         {/* Footer Area */}
         <Footer />
