@@ -298,7 +298,12 @@
 }
 
 .popular-posts-widget {
+	h4{
+		text-align: center;
+		color: $white;
+	}
 	.jq-tab-menu {
+		display: block;
 		text-align: center;
 		border-bottom: 1px solid rgba(130, 139, 178, 0.40);
 		.jq-tab-title {

@@ -65,8 +65,8 @@ export default class Post extends Component {
       </div>
     );
   }
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       postDetails: {
         title: "Cartridge Is Better Than Ever\n A Discount Toner",

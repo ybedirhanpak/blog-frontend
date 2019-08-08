@@ -1,6 +1,14 @@
 import React, { Component } from "react";
 
 export default class PopularPostsWidget extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      selectedTab: "0"
+    };
+  }
+
   generatePopularPosts = postList => {
     return postList.map((post, index) => (
       <div className="single-popular-post d-flex flex-row" key={index}>
@@ -20,25 +28,8 @@ export default class PopularPostsWidget extends Component {
   render() {
     return (
       <div className="single-widget popular-posts-widget">
-        <div className="jq-tab-wrapper" id="horizontalTab">
-          <div className="jq-tab-menu">
-            <div className="jq-tab-title active" data-tab="1">
-              Popular
-            </div>
-            <div className="jq-tab-title" data-tab="2">
-              Latest
-            </div>
-          </div>
-          <div className="jq-tab-content-wrapper">
-            <div className="jq-tab-content active" data-tab="1">
-              {this.generatePopularPosts(this.props.popularPosts)}
-            </div>
-
-            <div className="jq-tab-content active" data-tab="2">
-              {this.generatePopularPosts(this.props.latestPosts)}
-            </div>
-          </div>
-        </div>
+        <h4>Popular posts</h4>
+        {this.generatePopularPosts(this.props.popularPosts)}
       </div>
     );
   }
