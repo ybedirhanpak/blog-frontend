@@ -1,6 +1,12 @@
 import ReactQuill from "react-quill";
 import React, { Component } from "react";
-import "./style.css";
+import "./style.scss";
+
+import ReactHtmlParser, {
+  processNodes,
+  convertNodeToElement,
+  htmlparser2
+} from "react-html-parser";
 
 export default class TextEditor extends Component {
   constructor(props) {
@@ -63,7 +69,8 @@ export default class TextEditor extends Component {
           value={this.state.text}
           onChange={this.handleChange}
         />
-        <div dangerouslySetInnerHTML={{ __html: this.state.text }} />
+
+        <div className="post-content">{ReactHtmlParser(this.state.text)}</div>
       </>
     );
   }

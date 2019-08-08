@@ -2815,7 +2815,12 @@ body.mobile-nav-active #mobile-nav-toggle {
   color: #fff;
 }
 
+.popular-posts-widget h4 {
+  text-align: center;
+  color: #fff;
+}
 .popular-posts-widget .jq-tab-menu {
+  display: block;
   text-align: center;
   border-bottom: 1px solid rgba(130, 139, 178, 0.4);
 }
