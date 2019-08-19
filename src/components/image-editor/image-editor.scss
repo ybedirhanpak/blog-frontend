@@ -1,0 +1,28 @@
+.image-editor {
+  text-align: center;
+
+  label {
+    text-align: start;
+  }
+  h4 {
+    color: aliceblue;
+  }
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.special-card {
+  align-items: center;
+  border: 2px dashed;
+  border-radius: 8px;
+  background-color: rgba(245, 245, 245, 0.8) !important;
+  canvas {
+    @media (max-width: 401) {
+      width: 300;
+      height: 300px;
+    }
+  }
+}

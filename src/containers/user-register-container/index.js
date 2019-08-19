@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 //Css file
 import "./user-register.scss";
@@ -82,6 +83,7 @@ class UserRegister extends Component {
     } else if (this.state.password1 !== this.state.password2) {
       this.setState({ passwordNotEqualError: true });
     }
+    console.log("deneme1234sex");
   };
 
   render() {
@@ -218,15 +220,16 @@ class UserRegister extends Component {
                     Your passwords are not equal!
                   </div>
                 ) : null}
-
-                <button
-                  href="#"
-                  className="genric-btn primary-border circle arrow"
-                  onClick={this.submitRegister}
-                >
-                  Join Us!
-                  <span className="lnr lnr-arrow-right" />
-                </button>
+                <div className="register-button-wrapper">
+                  <button
+                    href=""
+                    className="genric-btn primary-border circle arrow "
+                    onClick={this.submitRegister}
+                  >
+                    Join Us!
+                    <span className="lnr lnr-arrow-right" />
+                  </button>
+                </div>
               </form>
               <br /> <br />
             </div>

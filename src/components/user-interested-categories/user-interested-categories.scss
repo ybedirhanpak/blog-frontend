@@ -1,0 +1,20 @@
+.category-image-list {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  @media (max-width: 440px) {
+    img {
+      width: 150px;
+      height: 150px;
+    }
+  }
+  @media (max-width: 340px) {
+    img {
+      width: 120px;
+      height: 120px;
+    }
+  }
+  h4 {
+    color: aliceblue;
+  }
+}
