@@ -6,6 +6,7 @@ import PostNavigation from "../../components/post-details/post-navigation";
 
 export default class PostDetailsContainer extends Component {
   render() {
+    console.log("container props:", this.props);
     return (
       <section class="blog_area section-gap single-post-area">
         <div class="container box_1170">

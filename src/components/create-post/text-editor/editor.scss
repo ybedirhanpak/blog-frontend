@@ -1,0 +1,18 @@
+.editor-wrapper {
+  padding-top: 70px;
+  min-height: 1000px;
+  .heading {
+    text-align: center;
+  }
+  .editor-frame {
+    border: 2px solid;
+    border-radius: 8px;
+  }
+  .title-wrapper {
+    text-align: center;
+  }
+  .button-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+}

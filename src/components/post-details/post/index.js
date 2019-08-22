@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 export default class index extends Component {
   render() {
+    console.log("state", this.state, "props", this.props);
     return (
       <div>
         <div class="main_blog_details">
