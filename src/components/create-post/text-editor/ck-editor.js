@@ -76,7 +76,7 @@ class CKTextEditor extends Component {
           <div className=" button-wrapper mt-10">
             <Link
               to={{
-                pathname: "/post-details",
+                pathname: "/post-preview",
                 state: {
                   title: this.state.title,
                   content: this.state.content

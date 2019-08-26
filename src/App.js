@@ -20,6 +20,7 @@ import UserLogin from "./containers/user-login-container";
 import CreatePostContainer from "./containers/create-post-container";
 import PostDetailsContainer from "./containers/post-details-container";
 import CKTextEditor from "./components/create-post/text-editor/ck-editor";
+import PostPreviewContainer from "./containers/post-preview-container";
 
 function App() {
   return (
@@ -35,8 +36,8 @@ function App() {
           <Route path="/complete-register" component={UserRegisterDetails} />
           <Route path="/login" component={UserLogin} />
           <Route path="/post-details" component={PostDetailsContainer} />
-          <Route path="/create-post" component={CreatePostContainer} />
-          <Route path="/ck-text-editor" component={CKTextEditor} />
+          <Route path="/create-post" component={CKTextEditor} />
+          <Route path="/post-preview" component={PostPreviewContainer} />
         </Switch>
         {/* Footer Area */}
         <Footer />
