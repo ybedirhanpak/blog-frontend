@@ -49,61 +49,63 @@ export default class ImageEditor extends Component {
   render() {
     console.log("image editor comp", this.handleSave);
     return (
-      <div className="image-editor">
-        <h4 className="mb-4">Choose your profile picture</h4>
-        <div className="card special-card ">
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text">Upload</span>
+      <div className="image-editor row">
+        <div className="col-sm-12">
+          <h4 className="mb-4">Choose your profile picture</h4>
+          <div className="card special-card ">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Upload</span>
+              </div>
+              <div class="custom-file">
+                <input
+                  type="file"
+                  class="custom-file-input"
+                  id="userPicturePrev"
+                  name="userPicturePrev"
+                  onChange={this.selectPhoto}
+                />
+                <label class="custom-file-label" for="userPicturePrev">
+                  Choose your profile picture
+                </label>
+              </div>
             </div>
-            <div class="custom-file">
-              <input
-                type="file"
-                class="custom-file-input"
-                id="userPicturePrev"
-                name="userPicturePrev"
-                onChange={this.selectPhoto}
-              />
-              <label class="custom-file-label" for="userPicturePrev">
-                Choose your profile picture
-              </label>
-            </div>
+
+            <AvatarEditor
+              ref={this.setEditorRef}
+              image={this.state.userPicturePrev}
+              width={200}
+              height={200}
+              border={50}
+              color={[255, 255, 255, 0.6]} // RGBA
+              scale={this.state.photoZoom}
+              rotate={0}
+              className=""
+            />
+
+            <label htmlFor="">Zoom</label>
+            <input
+              type="range"
+              step="0.01"
+              min="1"
+              max="2"
+              name="photoZoom"
+              onChange={this.handleChange}
+              className="mb-10"
+            />
           </div>
-
-          <AvatarEditor
-            ref={this.setEditorRef}
-            image={this.state.userPicturePrev}
-            width={300}
-            height={300}
-            border={50}
-            color={[255, 255, 255, 0.6]} // RGBA
-            scale={this.state.photoZoom}
-            rotate={0}
-            className=""
-          />
-
-          <label htmlFor="">Zoom</label>
-          <input
-            type="range"
-            step="0.01"
-            min="1"
-            max="2"
-            name="photoZoom"
-            onChange={this.handleChange}
-            className="mb-10"
-          />
-        </div>
-        <div className="button-wrapper">
-          <Link to="/complete-register/user-details">
-            <button
-              href=""
-              className="genric-btn primary-border circle arrow"
-              onClick={this.handleSave}
-            >
-              Next
-              <span className="lnr lnr-arrow-right" />
-            </button>
-          </Link>
+          <div className="button-wrapper">
+            <Link to="/complete-register/user-details">
+              <button
+                href=""
+                className="genric-btn primary-border circle arrow"
+                onClick={this.handleSave}
+              >
+                Next
+                <span className="lnr lnr-arrow-right" />
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
     );

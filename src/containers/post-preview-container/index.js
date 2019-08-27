@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import Post from "../../components/post-details/post";
+import Preview from "../../components/preview/post";
 import Review from "../../components/post-details/review";
 import SideBar from "../../components/sidebar";
 import PostNavigation from "../../components/post-details/post-navigation";
 
-export default class PostDetailsContainer extends Component {
+export default class PostPreviewContainer extends Component {
   render() {
     console.log("container props:", this.props);
     return (
@@ -12,9 +12,10 @@ export default class PostDetailsContainer extends Component {
         <div className="container box_1170">
           <div className="row">
             <div className="col-lg-8">
-              <Post />
-              <PostNavigation />
-              <Review />
+              <Preview
+                title={this.props.location.state.title}
+                content={this.props.location.state.content}
+              />
             </div>
             <div className="col-lg-4">
               <SideBar />
