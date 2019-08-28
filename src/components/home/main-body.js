@@ -8,6 +8,7 @@ export default class MainBody extends Component {
     super(props);
 
     this.state = {
+      selectedCategory: "",
       postList: [
         {
           thumbImage: "img/archive/c1.jpg",
@@ -73,11 +74,20 @@ export default class MainBody extends Component {
           publishDate: "March 14, 2018",
           commentCount: "05"
         }
-      ]
+      ],
+      value: ""
     };
   }
 
+  selectChange = event => {
+    console.log("change");
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  };
+
   render() {
+    console.log("state", this.state);
     return (
       <div className="main-body section-gap">
         <div className="container box_1170">
