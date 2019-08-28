@@ -1,72 +1,51 @@
 import React, { Component } from "react";
+import ReactHtmlParser, {
+  processNodes,
+  convertNodeToElement,
+  htmlparser2
+} from "react-html-parser";
 
-export default class index extends Component {
+import "./preview.scss";
+
+export default class Post extends Component {
   render() {
+    console.log("post props:", this.props, this.state);
     return (
       <div>
-        <div class="main_blog_details">
-          <img class="img-fluid" src="img/blog/news-blog.jpg" alt="" />
-          <h4>{this.state.postDetails.title}</h4>
-          <div class="user_details">
-            <div class="float-left">
+        <div className="main_blog_details">
+          <img className="img-fluid" src="img/blog/news-blog.jpg" alt="" />
+          <h4>{ReactHtmlParser(this.props.title)}</h4>
+          <div className="user_details">
+            <div className="float-left">
               {this.state.postDetails.tagList.map(element => (
                 <a>{element}</a>
               ))}
             </div>
-            <div class="float-right">
-              <div class="media">
-                <div class="media-body">
+            <div className="float-right">
+              <div className="media">
+                <div className="media-body">
                   <h5>{this.state.postDetails.userName}</h5>
                   <p>{this.state.postDetails.postDetails}</p>
                 </div>
-                <div class="d-flex">
+                <div className="d-flex">
                   <img src="img/blog/user-img.jpg" alt="" />
                 </div>
               </div>
             </div>
           </div>
-          {this.state.postDetails.postContent.split("\n").map((item, key) => {
-            return (
-              <p key={key}>
-                {item}
-                <br />
-              </p>
-            );
-          })}
-          <blockquote class="blockquote">
-            <p class="mb-0">{this.state.postDetails.codeContent}</p>
-          </blockquote>
-
-          <div class="news_d_footer">
-            <a>
-              <i class="lnr lnr lnr-heart" />
-              Lily and 4 people like this
-            </a>
-            <a class="justify-content-center ml-auto">
-              <i class="lnr lnr lnr-bubble" />
-              06 Comments
-            </a>
-            <div class="news_socail ml-auto">
-              <a>
-                <i class="fa fa-facebook" />
-              </a>
-              <a>
-                <i class="fa fa-twitter" />
-              </a>
-              <a>
-                <i class="fa fa-pinterest" />
-              </a>
-              <a>
-                <i class="fa fa-rss" />
-              </a>
-            </div>
+          <div className="post-content">
+            {ReactHtmlParser(this.props.content)}
+          </div>
+          <div>
+            <hr />
+            <h4>END OF PAGE</h4>
           </div>
         </div>
       </div>
     );
   }
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       postDetails: {
         title: "Cartridge Is Better Than Ever\n A Discount Toner",

@@ -10,17 +10,19 @@
   margin: 0;
 }
 
-.user-register-detail {
-  padding: 20px;
-  h2 {
-    margin-top: 100px;
-    text-align: center;
-    color: aliceblue;
-    @media (max-width: 961px) {
-      margin-top: 50px;
-    }
+h2.complete-header {
+  padding-top: 110px;
+  text-align: center;
+  color: aliceblue;
+  @media (max-width: 960px) {
+    padding-top: 70px;
   }
+}
 
+.user-register-detail {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
   h3 {
     color: aliceblue;
     margin-top: 7px;
@@ -29,13 +31,5 @@
 
   button {
     margin-top: 10px;
-  }
-
-  .interested-categories {
-    display: center;
-    h4 {
-      color: aliceblue;
-      margin-top: 7px;
-    }
   }
 }

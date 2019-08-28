@@ -1,0 +1,122 @@
+.post{
+    background: transparent;
+}
+.post-txt{
+    text-align: justify;
+}
+.event{
+  background: transparent;
+  position:relative;
+}
+
+.publishTime {
+  position:absolute;
+  bottom:0;
+  right:0;
+}
+
+.general{
+  position:relative;
+}
+
+.baslik{
+  position: absolute;
+  width:25%;
+}
+
+.profileImage{
+  border-radius:25px;
+  width: 15rem;
+  height: 15rem;
+}
+
+.stayTop{
+  position:sticky;
+  top:0;
+  padding:auto;
+  z-index: 1000;
+  text-align: center;
+}
+
+.delete:hover{
+  cursor: pointer;
+  transition:all 0.5s ease-in-out;
+  color:red;
+}
+
+.editProfile1{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.dropzone {
+  width : 15rem;
+  height : 15rem;
+  border : 1px solid black;
+}
+
+.containerProfile {
+  position: relative;
+}
+
+.image {
+  opacity: 1;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.containerProfile:hover .image {
+  opacity: 0.3;
+}
+
+.containerProfile:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  border: none;
+  background:none;
+  background-color: transparent;
+  cursor: pointer;
+  color: rgb(10, 10, 10);
+  font-size: 1rem;
+  padding: 1rem 2rem;
+}
+
+
+
+
+.mydivouter{
+  position:relative;
+ }
+ .mydivoverlap{
+     position: relative;
+     z-index: 1;
+ }
+ .mybuttonoverlap{
+  position: absolute;
+     z-index: 2;
+     top: 40%;
+     background-color: antiquewhite;
+     display: none;
+     left: 40%; 
+ }
+ .mydivouter:hover .mybuttonoverlap{ 
+  display:block;
+  background-color: antiquewhite;
+
+ }
