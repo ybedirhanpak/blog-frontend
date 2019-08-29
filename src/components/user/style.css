@@ -1,59 +1,59 @@
-.post{
-    background: transparent;
-}
-.post-txt{
-    text-align: justify;
-}
-.event{
+.post {
   background: transparent;
-  position:relative;
+}
+.post-txt {
+  text-align: justify;
+}
+.event {
+  background: transparent;
+  position: relative;
 }
 
 .publishTime {
-  position:absolute;
-  bottom:0;
-  right:0;
-}
-
-.general{
-  position:relative;
-}
-
-.baslik{
   position: absolute;
-  width:25%;
+  bottom: 0;
+  right: 0;
 }
 
-.profileImage{
-  border-radius:25px;
+.general {
+  position: relative;
+}
+
+.baslik {
+  position: absolute;
+  width: 25%;
+}
+
+.profileImage {
+  border-radius: 25px;
   width: 15rem;
   height: 15rem;
 }
 
-.stayTop{
-  position:sticky;
-  top:0;
-  padding:auto;
+.stayTop {
+  position: sticky;
+  top: 0;
+  padding: auto;
   z-index: 1000;
   text-align: center;
 }
 
-.delete:hover{
+.delete:hover {
   cursor: pointer;
-  transition:all 0.5s ease-in-out;
-  color:red;
+  transition: all 0.5s ease-in-out;
+  color: red;
 }
 
-.editProfile1{
+.editProfile1 {
   position: absolute;
   top: 0;
   right: 0;
 }
 
 .dropzone {
-  width : 15rem;
-  height : 15rem;
-  border : 1px solid black;
+  width: 15rem;
+  height: 15rem;
+  border: 1px solid black;
 }
 
 .containerProfile {
@@ -64,12 +64,12 @@
   opacity: 1;
   width: 100%;
   height: auto;
-  transition: .5s ease;
+  transition: 0.5s ease;
   backface-visibility: hidden;
 }
 
 .middle {
-  transition: .5s ease;
+  transition: 0.5s ease;
   opacity: 0;
   position: absolute;
   top: 50%;
@@ -89,7 +89,7 @@
 
 .text {
   border: none;
-  background:none;
+  background: none;
   background-color: transparent;
   cursor: pointer;
   color: rgb(10, 10, 10);
@@ -97,26 +97,26 @@
   padding: 1rem 2rem;
 }
 
-
-
-
-.mydivouter{
-  position:relative;
- }
- .mydivoverlap{
-     position: relative;
-     z-index: 1;
- }
- .mybuttonoverlap{
+.mydivouter {
+  position: relative;
+}
+.mydivoverlap {
+  position: relative;
+  z-index: 1;
+}
+.mybuttonoverlap {
   position: absolute;
-     z-index: 2;
-     top: 40%;
-     background-color: antiquewhite;
-     display: none;
-     left: 40%; 
- }
- .mydivouter:hover .mybuttonoverlap{ 
-  display:block;
+  z-index: 2;
+  top: 40%;
   background-color: antiquewhite;
+  display: none;
+  left: 40%;
+}
+.mydivouter:hover .mybuttonoverlap {
+  display: block;
+  background-color: antiquewhite;
+}
 
- }
+.row-fix {
+  margin: 0 !important;
+}

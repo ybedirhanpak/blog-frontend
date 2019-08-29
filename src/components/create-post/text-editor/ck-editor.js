@@ -55,9 +55,7 @@ class CKTextEditor extends Component {
           <div className="editor-frame mt-3">
             <CKEditor
               editor={InlineEditor}
-              config={{
-                placeholder: "Your text"
-              }}
+              config={{ placeholder: "Your text" }}
               data="<p></p>"
               onInit={editor => {
                 // You can store the "editor" and use when it is needed.
