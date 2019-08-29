@@ -1,0 +1,35 @@
+nav {
+  background: transparent;
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+
+  .nav-flex {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .nav-menu {
+    align-items: center;
+    height: 100%;
+    justify-content: space-between;
+  }
+}
+
+.app-logo {
+  width: 4.5rem;
+  height: 100%;
+  svg {
+    g {
+      transition: all 0.5s;
+    }
+  }
+}
+
+.logo-scrolled {
+  svg {
+    g {
+      transition: all 0.5s;
+      fill: white;
+    }
+  }
+}

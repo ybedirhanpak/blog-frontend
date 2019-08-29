@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Component } from "react";
 import CKEditor from "@ckeditor/ckeditor5-react";
 import InlineEditor from "@ckeditor/ckeditor5-build-inline";
 import { Link } from "react-router-dom";
@@ -20,33 +20,34 @@ const titleEditorConfiguration = {
   }
 };
 
-export default function UpdatePost(props) {
-
-  const {title,content} = props;
-  const [state , setState] = useState({
-    title:title,
-    content:content
-  })
-
-  console.log(props.location.state.content)
-  
+class CKTextEditor extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      title: this.props.location.state.title,
+      content: this.props.location.state.content
+    };
+  }
+  render() {
+    console.log("update page props", this.props, "state", this.state);
     return (
       <div className="row editor-wrapper">
         <div className="col-sm-2 col-md-3 col-xl-2" />
         <div className="col-sm-8 col-md-6 col-xl-8">
           <h2 className="heading">You can start to write!</h2>
-          <div className="editor-frame title-wrapper mt-5" style={{textAlign:"center"}}>
+          <div className="editor-frame title-wrapper mt-5">
             <CKEditor
               editor={InlineEditor}
               config={titleEditorConfiguration}
-              data={props.location.state.title}
+              data={this.props.location.state.title}
               onInit={editor => {
                 // You can store the "editor" and use when it is needed.
                 console.log("Editor is ready to use!", editor);
               }}
               onChange={(event, editor) => {
                 const title = editor.getData();
-                setState({
+                console.log({ title });
+                this.setState({
                   title: title
                 });
               }}
@@ -55,8 +56,10 @@ export default function UpdatePost(props) {
           <div className="editor-frame mt-3">
             <CKEditor
               editor={InlineEditor}
- 
-              data={props.location.state.content}
+              config={{
+                placeholder: "Your text"
+              }}
+              data={this.props.location.state.content}
               onInit={editor => {
                 // You can store the "editor" and use when it is needed.
                 console.log("Editor is ready to use!", editor);
@@ -64,8 +67,8 @@ export default function UpdatePost(props) {
               onChange={(event, editor) => {
                 const content = editor.getData();
                 console.log({ content });
-                setState({
-                  content:{content}
+                this.setState({
+                  content
                 });
               }}
             />
@@ -75,8 +78,8 @@ export default function UpdatePost(props) {
               to={{
                 pathname: "/post-preview",
                 state: {
-                  title: {title},
-                  content: {content}
+                  title: this.state.title,
+                  content: this.state.content
                 }
               }}
             >
@@ -98,5 +101,6 @@ export default function UpdatePost(props) {
       </div>
     );
   }
+}
 
-
+export default CKTextEditor;
