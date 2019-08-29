@@ -154,8 +154,10 @@ $(document).ready(function() {
   $(window).scroll(function() {
     if ($(this).scrollTop() > 35) {
       $("#header").addClass("header-scrolled");
+      $("#app-logo").addClass("logo-scrolled");
     } else {
       $("#header").removeClass("header-scrolled");
+      $("#app-logo").removeClass("logo-scrolled");
     }
   });
 

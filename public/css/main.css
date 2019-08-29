@@ -1880,11 +1880,6 @@ h6 {
   color: #415094;
   font-weight: 500;
 }
-@media (max-width: 960px) {
-  .header-top .search-trigger {
-    display: none;
-  }
-}
 
 #search_input_box {
   text-align: center;
@@ -1940,7 +1935,7 @@ h6 {
 }
 
 .main-menu {
-  padding: 20px 0px;
+  height: 60px;
 }
 
 #header {
@@ -2067,9 +2062,22 @@ h6 {
   content: "";
 }
 
+@media (max-width: 960px) {
+  .hide-header-items {
+    display: none;
+  }
+}
+
+.nav-items-wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
 /* Nav Meu Container */
 #nav-menu-container {
   margin: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /* Nav Meu Styling */
