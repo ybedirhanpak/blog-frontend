@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default class InterestedCategories extends Component {
   render() {
     return (
-      <div class="interested-categories">
+      <div className="interested-categories">
         <h4 className="mb-10">Choose your interested categories!</h4>
         <div className="category-image-list">
           <div className="mt-10 ">

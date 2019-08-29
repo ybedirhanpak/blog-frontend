@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 
 //Route
 import {
@@ -25,31 +25,31 @@ import UpdatePost from "./components/update-post";
 import PostPreviewContainer from "./containers/post-preview-container";
 import Error from "../src/components/Error";
 
-function App() {
-  return (
-    <div className="App">
-      <Router>
-        {/* Header */}
-        <Header />
-        <Switch>
-          {/* Home Routes */}
-          <Route exact path="/" render={() => <Redirect to="home" />} />
-          <Route path="/home" component={HomeContainer} exact />
-          <Route path="/register" component={UserRegister} />
-          <Route path="/complete-register" component={UserRegisterDetails} />
-          <Route path="/login" component={UserLogin} />
-          <Route path="/user" component={userContainer} />
-          <Route path="/post-details" component={PostDetailsContainer} />
-          <Route path="/create-post" component={CKTextEditor} />
-          <Route path="/update-post" component={UpdatePost} />
-          <Route path="/post-preview" component={PostPreviewContainer} />
-          <Route component={Error} />
-        </Switch>
-        {/* Footer Area */}
-        <Footer />
-      </Router>
-    </div>
-  );
+export default class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <Router>
+          {/* Header */}
+          <Header />
+          <Switch>
+            {/* Home Routes */}
+            <Route exact path="/" render={() => <Redirect to="home" />} />
+            <Route exact path="/home" component={HomeContainer} />
+            <Route path="/register" component={UserRegister} />
+            <Route path="/complete-register" component={UserRegisterDetails} />
+            <Route path="/login" component={UserLogin} />
+            <Route path="/user" component={userContainer} />
+            <Route path="/post-details" component={PostDetailsContainer} />
+            <Route path="/create-post" component={CKTextEditor} />
+            <Route path="/update-post" component={UpdatePost} />
+            <Route path="/post-preview" component={PostPreviewContainer} />
+            <Route component={Error} />
+          </Switch>
+          {/* Footer Area */}
+          <Footer />
+        </Router>
+      </div>
+    );
+  }
 }
-
-export default App;

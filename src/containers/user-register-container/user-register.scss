@@ -1,5 +1,5 @@
 .register-background {
-  height: 800px;
+  min-height: 1000px;
   width: 100%;
   background-image: url("register-bg.jpg");
   background-position: center;
@@ -43,27 +43,10 @@
       margin-right: 10px;
     }
   }
-
-  .gender-form {
-    display: flex;
-    align-items: flex-start;
-    h4 {
-      color: aliceblue;
-      margin-top: 10px;
-      margin-right: 20px;
-      @media (max-width: 991px) {
-        margin-right: 5px;
-      }
-    }
-
-    .gender-header {
-      margin-right: 10px;
-    }
-
-    .gender-dropdown {
-      height: 30px;
-      margin-top: 5px;
-      margin-left: 15px;
+  .modal-content {
+    .modal-header {
+      color: #7c32ff;
+      margin-top: 20px;
     }
   }
 }
