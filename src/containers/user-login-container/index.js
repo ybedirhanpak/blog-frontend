@@ -2,8 +2,6 @@ import React, { Component } from "react";
 //Css file
 import "./user-login.scss";
 
-import windowSize from "react-window-size";
-
 //Components
 import LoginForm from "./login-form";
 
