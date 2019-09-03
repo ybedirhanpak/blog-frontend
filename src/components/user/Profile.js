@@ -184,7 +184,7 @@ export default class Profile extends Component {
                     onChange={this.handleOnCropChange}
                     />
                     <canvas ref={this.imagePreviewCanvasRef} style={{display:"none"}}></canvas>                    
-                    <div class="btn-group" role="group">
+                    <div className="btn-group" role="group">
                     <button className="btn btn-primary" onClick={this.handleUploadClick}>Save Change</button>
                     <button className="btn btn-secondary" onClick={this.handleClearToDefault}>Clear</button>
                     <button className="btn btn-danger" onClick={this.handleCancel}>Cancel</button>

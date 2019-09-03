@@ -14,7 +14,10 @@ import InterestedCategories from "../../../components/user-interested-categories
 export default class UserRegisterDetails extends Component {
   render() {
     return (
-      <div className="user-register-detail-background">
+      <div
+        className="user-register-detail-background"
+        style={{ minHeight: window.innerHeight }}
+      >
         <div className="container-fluid">
           <h2 className="complete-header  mb-50">Complete Your Profile!</h2>
           <div className="user-register-detail">
