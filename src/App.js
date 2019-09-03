@@ -24,6 +24,7 @@ import CKTextEditor from "./components/create-post/text-editor/ck-editor";
 import UpdatePost from "./components/update-post";
 import PostPreviewContainer from "./containers/post-preview-container";
 import Error from "../src/components/Error";
+import PrivateFooter from "./components/private-footer";
 
 export default class App extends Component {
   render() {
@@ -47,7 +48,15 @@ export default class App extends Component {
             <Route component={Error} />
           </Switch>
           {/* Footer Area */}
-          <Footer />
+          <Route
+            path="/"
+            render={props => (
+              <PrivateFooter
+                {...props}
+                avoidList={["/register", "/login", "/create-post"]}
+              />
+            )}
+          />
         </Router>
       </div>
     );

@@ -41,9 +41,9 @@ class LoginForm extends Component {
 
     const allInputsFilled =
       this.state.username &&
-      this.state.username != EMPTY_STRING &&
+      this.state.username !== EMPTY_STRING &&
       this.state.password &&
-      this.state.password != EMPTY_STRING;
+      this.state.password !== EMPTY_STRING;
 
     return (
       <div>

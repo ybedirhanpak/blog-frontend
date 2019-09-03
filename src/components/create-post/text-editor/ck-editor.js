@@ -39,7 +39,10 @@ class CKTextEditor extends Component {
 
   render() {
     return (
-      <div className="row editor-wrapper">
+      <div
+        className="row editor-wrapper"
+        style={{ minHeight: window.innerHeight }}
+      >
         <div className="col-sm-2 col-md-3 col-xl-2" />
         <div className="col-sm-8 col-md-6 col-xl-8">
           <h2 className="heading">You can start to write!</h2>

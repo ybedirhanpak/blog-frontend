@@ -1,7 +1,10 @@
 import React, { Component } from "react";
-
 //Css file
 import "./user-login.scss";
+
+import windowSize from "react-window-size";
+
+//Components
 import LoginForm from "./login-form";
 
 export default class UserLoginContainer extends Component {
@@ -15,7 +18,10 @@ export default class UserLoginContainer extends Component {
 
   render() {
     return (
-      <div className="login-background">
+      <div
+        className="login-background"
+        style={{ minHeight: window.innerHeight }}
+      >
         <div className="login">
           <div className="row login-row">
             <div className="col-sm-12 col-md-2 col-lg-3" />

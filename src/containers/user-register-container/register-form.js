@@ -57,19 +57,19 @@ class RegisterForm extends Component {
 
     const allInputsFilled =
       this.state.firstName &&
-      this.state.firstName != EMPTY_STRING &&
+      this.state.firstName !== EMPTY_STRING &&
       this.state.lastName &&
-      this.state.lastName != EMPTY_STRING &&
+      this.state.lastName !== EMPTY_STRING &&
       this.state.username &&
-      this.state.username != EMPTY_STRING &&
+      this.state.username !== EMPTY_STRING &&
       this.state.email &&
-      this.state.email != EMPTY_STRING &&
+      this.state.email !== EMPTY_STRING &&
       this.state.password1 &&
-      this.state.password1 != EMPTY_STRING &&
+      this.state.password1 !== EMPTY_STRING &&
       this.state.password2 &&
-      this.state.password2 != EMPTY_STRING &&
+      this.state.password2 !== EMPTY_STRING &&
       this.state.birthDay &&
-      this.state.birthDay != EMPTY_STRING;
+      this.state.birthDay !== EMPTY_STRING;
 
     return (
       <div className="container-fluid register">
@@ -180,7 +180,7 @@ class RegisterForm extends Component {
               Please enter all areas!
             </div>
           ) : null}
-          {this.state.password1 != this.state.password2 ? (
+          {this.state.password1 !== this.state.password2 ? (
             <div className="alert alert-danger mt-1" role="alert">
               Your passwords are not equal!
             </div>
