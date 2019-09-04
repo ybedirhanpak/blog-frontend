@@ -5,7 +5,13 @@ import "./user-login.scss";
 //Components
 import LoginForm from "./login-form";
 
-export default class UserLoginContainer extends Component {
+//Redux
+import { connect } from "react-redux";
+
+//Route
+import { Redirect } from "react-router-dom";
+
+class UserLoginContainer extends Component {
   componentDidMount() {
     window.scrollTo(0, 0);
   }
@@ -15,6 +21,9 @@ export default class UserLoginContainer extends Component {
   }
 
   render() {
+    if (this.props.user) {
+      return <Redirect to="/user" />;
+    }
     return (
       <div
         className="login-background"
@@ -33,3 +42,11 @@ export default class UserLoginContainer extends Component {
     );
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    user: state.user.current
+  };
+};
+
+export default connect(mapStateToProps)(UserLoginContainer);

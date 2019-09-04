@@ -75,9 +75,6 @@ html {
 .top-stories-area {
   margin-top: 65px;
   padding: 20px 0;
-  @media (max-width: 960px) {
-    margin-top: 0;
-  }
 }
 .single-stories-carousel {
   border-right: 1px solid rgba(#415094, 0.15);

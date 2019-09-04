@@ -52,6 +52,37 @@ class RegisterForm extends Component {
     this.props.postUserRegister(userRegisterBody);
   };
 
+  giveAlert = event => {
+    event.preventDefault();
+    if (this.state.firstName === EMPTY_STRING) {
+      this.setState({ firstName: "" });
+    }
+
+    if (this.state.lastName === EMPTY_STRING) {
+      this.setState({ lastName: "" });
+    }
+
+    if (this.state.username === EMPTY_STRING) {
+      this.setState({ username: "" });
+    }
+
+    if (this.state.password1 === EMPTY_STRING) {
+      this.setState({ password1: "" });
+    }
+
+    if (this.state.password2 === EMPTY_STRING) {
+      this.setState({ password2: "" });
+    }
+
+    if (this.state.email === EMPTY_STRING) {
+      this.setState({ email: "" });
+    }
+
+    if (this.state.birthDay === EMPTY_STRING) {
+      this.setState({ birthDay: "" });
+    }
+  };
+
   render() {
     console.log("user register form state", this.state);
 
@@ -158,6 +189,11 @@ class RegisterForm extends Component {
                 Please enter your password again!
               </div>
             ) : null}
+            {this.state.password1 !== this.state.password2 ? (
+              <div className="alert alert-danger mt-1" role="alert">
+                Your passwords are not equal!
+              </div>
+            ) : null}
           </div>
           <div className="mt-10 birthday-form">
             <h3 className="birthday-header">Birthday</h3>
@@ -174,28 +210,11 @@ class RegisterForm extends Component {
               Please enter your birthday!
             </div>
           ) : null}
-
-          {!allInputsFilled ? (
-            <div className="alert alert-danger mt-1" role="alert">
-              Please enter all areas!
-            </div>
-          ) : null}
-          {this.state.password1 !== this.state.password2 ? (
-            <div className="alert alert-danger mt-1" role="alert">
-              Your passwords are not equal!
-            </div>
-          ) : null}
           <div className="register-button-wrapper">
             <button
               href=""
               className="genric-btn primary-border circle arrow "
-              onClick={
-                allInputsFilled
-                  ? this.submitRegister
-                  : event => {
-                      event.preventDefault();
-                    }
-              }
+              onClick={allInputsFilled ? this.submitRegister : this.giveAlert}
               data-toggle="modal"
               data-target="#pleaseWaitModal"
             >
