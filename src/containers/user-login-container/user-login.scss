@@ -1,5 +1,4 @@
 .login-background {
-  height: 800px;
   width: 100%;
   background-image: url("login-bg.jpg");
   background-position: center;
@@ -15,8 +14,12 @@
     margin-top: 100px;
     text-align: center;
     color: aliceblue;
-    @media (max-width: 961px) {
-      margin-top: 50px;
+  }
+
+  .modal-content {
+    .modal-header {
+      color: #7c32ff;
+      margin-top: 20px;
     }
   }
 }

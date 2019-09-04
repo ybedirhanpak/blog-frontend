@@ -28,9 +28,21 @@ class CKTextEditor extends Component {
       content: ""
     };
   }
+
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
+  componentDidUpdate() {
+    window.scrollTo(0, 0);
+  }
+
   render() {
     return (
-      <div className="row editor-wrapper">
+      <div
+        className="row editor-wrapper"
+        style={{ minHeight: window.innerHeight }}
+      >
         <div className="col-sm-2 col-md-3 col-xl-2" />
         <div className="col-sm-8 col-md-6 col-xl-8">
           <h2 className="heading">You can start to write!</h2>
@@ -55,9 +67,7 @@ class CKTextEditor extends Component {
           <div className="editor-frame mt-3">
             <CKEditor
               editor={InlineEditor}
-              config={{
-                placeholder: "Your text"
-              }}
+              config={{ placeholder: "Your text" }}
               data="<p></p>"
               onInit={editor => {
                 // You can store the "editor" and use when it is needed.

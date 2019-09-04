@@ -1,51 +1,59 @@
-.post{
-    background: transparent;
-}
-.post-txt{
-    text-align: justify;
-}
-.event{
+.post {
   background: transparent;
-  position:relative;
+}
+.post-txt {
+  text-align: justify;
+}
+.event {
+  background: transparent;
+  position: relative;
 }
 
 .publishTime {
-  position:absolute;
-  bottom:0;
-  right:0;
-}
-
-.general{
-  position:relative;
-}
-
-.baslik{
   position: absolute;
-  width:25%;
+  bottom: 0;
+  right: 0;
 }
 
-
-.stayTop{
-  position:sticky;
-  top:5rem;
+.general {
+  position: relative;
 }
 
-.delete:hover{
+.baslik {
+  position: absolute;
+  width: 25%;
+}
+
+.profileImage {
+  border-radius: 25px;
+  width: 15rem;
+  height: 15rem;
+}
+
+.stayTop {
+  position: sticky;
+  top: 0;
+  padding: auto;
+  z-index: 1000;
+  text-align: center;
+}
+
+.delete:hover {
   cursor: pointer;
-  transition:all 0.5s ease-in-out;
-  color:red;
+  transition: all 0.5s ease-in-out;
+  color: red;
 }
 
-.editProfile1{
+.editProfile1 {
   position: absolute;
   top: 0;
   right: 0;
 }
 
 .dropzone {
-  width : 15rem;
-  height : 15rem;
-  border : 1px solid black;
+  width: 15rem;
+  height: 15rem;
+  border: 1px solid black;
 }
 
 .containerProfile {
@@ -56,12 +64,12 @@
   opacity: 1;
   width: 100%;
   height: auto;
-  transition: .5s ease;
+  transition: 0.5s ease;
   backface-visibility: hidden;
 }
 
 .middle {
-  transition: .5s ease;
+  transition: 0.5s ease;
   opacity: 0;
   position: absolute;
   top: 50%;
@@ -81,7 +89,7 @@
 
 .text {
   border: none;
-  background:none;
+  background: none;
   background-color: transparent;
   cursor: pointer;
   color: rgb(10, 10, 10);
@@ -89,64 +97,26 @@
   padding: 1rem 2rem;
 }
 
-#stayTop1 {
-  position: fixed;
-  left: 0;
-  top: 0;
-  right: 0;
-  transition: all 0.5s;
-  background: #f5f6fa;
+.mydivouter {
+  position: relative;
+}
+.mydivoverlap {
+  position: relative;
+  z-index: 1;
+}
+.mybuttonoverlap {
+  position: absolute;
+  z-index: 2;
+  top: 40%;
+  background-color: antiquewhite;
+  display: none;
+  left: 40%;
+}
+.mydivouter:hover .mybuttonoverlap {
+  display: block;
+  background-color: antiquewhite;
 }
 
-
-#stayTop1.stayTop1-scrolled {
-  background: #7c32ff;
-  transition: all 0.5s;
-  margin-top: 0;
-}
-#stayTop1.stayTop1-scrolled .nav-menu a {
-  color: #fff;
-}
-#stayTop1.stayTop1-scrolled .nav-menu ul li a {
-  color: #000000;
-}
-
-@media (max-width: 673px) {
-  #logo {
-    margin-left: 20px;
-  }
-}
-#stayTop1 #logo h1 {
-  font-size: 34px;
-  margin: 0;
-  padding: 0;
-  line-height: 1;
-  font-weight: 700;
-  letter-spacing: 3px;
-}
-
-#stayTop1 #logo h1 a,
-#stayTop1 #logo h1 a:hover {
-  color: #fff;
-  padding-left: 10px;
-  border-left: 4px solid #7c32ff;
-}
-
-#stayTop1 #logo img {
-  padding: 0;
-  margin: 0;
-}
-
-@media (max-width: 768px) {
-  #stayTop1 #logo h1 {
-    font-size: 28px;
-  }
-
-  #stayTop1 #logo img {
-    max-height: 40px;
-  }
-}
-
-.rowFix{
-  margin:0 !important;
+.row-fix {
+  margin: 0 !important;
 }

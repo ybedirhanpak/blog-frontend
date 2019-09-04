@@ -58,7 +58,7 @@ export default class UserBio extends Component {
         </div>
         <div className="mt-10">
           <h4>Personal Details:</h4>
-          <textarea class="single-textarea" placeholder="Biografi" />
+          <textarea className="single-textarea" placeholder="Biografi" />
         </div>
         <div className="bio-buttons">
           <Link to="/complete-register">

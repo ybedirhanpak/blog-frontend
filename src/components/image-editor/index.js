@@ -53,19 +53,19 @@ export default class ImageEditor extends Component {
         <div className="col-sm-12">
           <h4 className="mb-4">Choose your profile picture</h4>
           <div className="card special-card ">
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text">Upload</span>
+            <div className="input-group mb-3">
+              <div className="input-group-prepend">
+                <span className="input-group-text">Upload</span>
               </div>
-              <div class="custom-file">
+              <div className="custom-file">
                 <input
                   type="file"
-                  class="custom-file-input"
+                  className="custom-file-input"
                   id="userPicturePrev"
                   name="userPicturePrev"
                   onChange={this.selectPhoto}
                 />
-                <label class="custom-file-label" for="userPicturePrev">
+                <label className="custom-file-label" for="userPicturePrev">
                   Choose your profile picture
                 </label>
               </div>
