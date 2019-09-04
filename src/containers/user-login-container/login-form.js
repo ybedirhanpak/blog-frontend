@@ -36,6 +36,17 @@ class LoginForm extends Component {
     this.props.postUserLogin(userLogin);
   };
 
+  giveAlert = event => {
+    event.preventDefault();
+    if (this.state.username === EMPTY_STRING) {
+      this.setState({ username: "" });
+    }
+
+    if (this.state.password === EMPTY_STRING) {
+      this.setState({ password: "" });
+    }
+  };
+
   render() {
     console.log("login form state", this.state);
 
@@ -80,13 +91,7 @@ class LoginForm extends Component {
           <button
             href="#"
             className="genric-btn primary-border circle arrow login-button"
-            onClick={
-              allInputsFilled
-                ? this.submitLogin
-                : event => {
-                    event.preventDefault();
-                  }
-            }
+            onClick={allInputsFilled ? this.submitLogin : this.giveAlert}
             data-toggle="modal"
             data-target="#pleaseWaitModal"
           >

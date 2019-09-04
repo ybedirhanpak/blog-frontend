@@ -116,7 +116,7 @@ export default class Account extends Component {
 
   render() {
     return (
-      <div className="row row-fix" style={{ paddingTop: "6rem" }}>
+      <div className="row rowFix" style={{ paddingTop: "6rem" }}>
         <div className="col-sm-12 col-md-3">
           <Profile info={this.state.user} />
         </div>

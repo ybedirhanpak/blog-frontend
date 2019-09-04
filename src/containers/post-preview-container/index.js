@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import Preview from "../../components/preview/post";
-import Review from "../../components/post-details/review";
 import SideBar from "../../components/sidebar";
-import PostNavigation from "../../components/post-details/post-navigation";
 
 export default class PostPreviewContainer extends Component {
   render() {
