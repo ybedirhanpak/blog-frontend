@@ -30,7 +30,7 @@ function App() {
     <div className="App">
       <Router>
         {/* Header */}
-        <Header />
+        {/* <Header /> */}
         <Switch>
           {/* Home Routes */}
           <Route exact path="/" render={() => <Redirect to="home" />} />
@@ -46,7 +46,7 @@ function App() {
           <Route component={Error} />
         </Switch>
         {/* Footer Area */}
-        <Footer />
+        {/* <Footer /> */}
       </Router>
     </div>
   );

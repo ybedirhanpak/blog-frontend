@@ -18,13 +18,13 @@ export default function UserPost(props)
     }
 
     return(
-        <div className="row my-2 text-capitalize text-center mx-auto">
+        <div className="row my-2 py-2 text-capitalize text-center mx-auto">
             <div className="col-10 mx-auto col-lg-2">
                 <img src={thumbImage} style={{width:'5rem',height:"5rem"}} className="img-fluid"
                 alt="user" />                
             </div>
             <div className="col-10 mx-auto post">
-                <div className="mx-auto text-left text-title">
+                <div className="mx-auto text-center text-title">
                     {title}
                     <div className="dropdown">
                         <button type="button" className="btn btn-default" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{ float: "right", background: "transparent" }}>
@@ -44,7 +44,7 @@ export default function UserPost(props)
 
                 <span>
                 <ShowMoreText
-                lines={5}
+                lines={1}
                 more='Show more'
                 less='Show less'
                 expanded={false}

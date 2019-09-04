@@ -7,6 +7,7 @@ import {base64StringtoFile,
     downloadBase64File,
     extractImageFileExtensionFromBase64,
     image64toCanvasRef} from './ReusableUtils';
+import { thisExpression } from '@babel/types';
 const imageMaxSize = 1000000000;
 const acceptedFileTypes = 'image/x-png, image/png, image/jpg, image/jpeg, image/gif';
 const acceptedFileTypesArray = acceptedFileTypes.split(",").map((item) => {return item.trim()});
@@ -72,6 +73,7 @@ export default class Profile extends Component {
                          const myResult = myFileItemReader.result;
                          this.setState({
                              imgSrc: myResult,
+                             imgOrg: myResult,
                              imgSrcExt: extractImageFileExtensionFromBase64(myResult)
                          })
                      }, false)
@@ -112,6 +114,9 @@ export default class Profile extends Component {
         handleOnCropComplete = (crop, pixelCrop) => {
             const canvasRef = this.imagePreviewCanvasRef.current;
             const {imgSrc} = this.state;
+            this.setState({
+                imgOrg:imgSrc
+            })
             image64toCanvasRef(canvasRef, imgSrc, pixelCrop);
         }
 
@@ -152,9 +157,9 @@ export default class Profile extends Component {
         }
 
         handleCancel = () =>{
-            const {imgOrg,isUpdateOpen} = this.state;
+            const {imgSrc,isUpdateOpen} = this.state;
             this.setState({
-                imgSrc: imgOrg,
+                imgSrc: imgSrc,
                 isUpdateOpen: !isUpdateOpen
             })
         }
@@ -162,13 +167,14 @@ export default class Profile extends Component {
         render(){
         const { description } = this.props.info;
 
-        const { imgSrc } = this.state;
+        const { imgSrc,imgOrg } = this.state;
 
         return (
-            <div className="my-2 mx-auto col-10 general stayTop">  
+            <div className="stayTop">
+            <div className="my-2 mx-auto col-10">  
             {!this.state.isUpdateOpen  &&
                 <div className="containerProfile">
-                <img src={imgSrc} className="image" style={{width:"15rem",height:"15rem",borderRadius:"25rem"}} />
+                <img src={imgSrc} className="image" style={{width:"100%",height:"15rem",borderRadius:"25rem"}} />
                     <div className="middle">
                         <button className="text" type="button" onClick={this.openCropOptions}>Update</button>
                     </div>
@@ -178,7 +184,7 @@ export default class Profile extends Component {
                 <div style={{ textAlign: "center" }}>
                     <ReactCrop
                     imageStyle={{width:"15rem",height:"15rem"}}
-                    src={imgSrc} 
+                    src={imgOrg} 
                     crop={this.state.crop}
                     onComplete={this.handleOnCropComplete}
                     onChange={this.handleOnCropChange}
@@ -200,6 +206,7 @@ export default class Profile extends Component {
                 >
                     {description}
                 </ShowMoreText>
+            </div>
             </div>
         );
         }

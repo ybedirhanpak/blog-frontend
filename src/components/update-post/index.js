@@ -1,102 +1,60 @@
-import React, { useState } from "react";
-import CKEditor from "@ckeditor/ckeditor5-react";
-import InlineEditor from "@ckeditor/ckeditor5-build-inline";
-import { Link } from "react-router-dom";
+import React,{ Component } from 'react';
+import { Editor } from '@tinymce/tinymce-react';
+import * as firebase from "firebase/app";
 
-import "../create-post/text-editor/editor.scss";
+export default class UploadPost extends Component {
+  constructor(props) {
+  super(props);
 
-const titleEditorConfiguration = {
-  toolbar: ["heading"],
-  placeholder: "Title",
-  heading: {
-    options: [
-      {
-        model: "heading1",
-        view: "h2",
-        title: "Main Heading",
-        class: "ck-heading_heading1"
+  this.state = { content: '' };
+  this.handleEditorChange = this.handleEditorChange.bind(this);
+}
+
+handleEditorChange(content, editor) {
+  this.setState({ content });
+}
+
+
+  render(){
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBx5B2V9gdp50VqssrryG-l6XmMW2n7gng",
+      authDomain: "blog-d27b9.firebaseapp.com",
+      databaseURL: "https://blog-d27b9.firebaseio.com",
+      projectId: "blog-d27b9",
+      storageBucket: "",
+      messagingSenderId: "791103630123",
+      appId: "1:791103630123:web:5dc9d4af3d1ac17b"
+    };
+    
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    return(
+      <Editor
+      apiKey="hrucxlytu0xtow5cmm84dcnn3q4p16ilfob62pfae4dfmws9"
+      value={this.state.content}
+      onEditorChange={this.handleEditorChange} 
+      init={{
+      plugins:'advlist autolink lists link image charmap print preview anchor searchreplace visualblocks code fullscreen insertdatetime media table paste imagetools wordcount',
+      toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image code",
+      paste_data_images:true,
+      images_upload_url: 'postAcceptor.php',
+      file_browser_callback_types: 'image',
+      images_upload_handler: function (blobInfo, success, failure) {
+        console.log('blobInfo',blobInfo);
+        // setTimeout(function() {
+          // var reader = new FileReader();
+          // reader.readAsDataURL(blobInfo.blob); 
+          // reader.onloadend = function() {
+          // const base64data = reader.result;                
+          // console.log(base64data);
+          // }
+        //    success(blobInfo.base64);
+        // }, 2000);
       }
-    ]
+      
+    }} />
+      
+    )
   }
-};
-
-export default function UpdatePost(props) {
-
-  const {title,content} = props;
-  const [state , setState] = useState({
-    title:title,
-    content:content
-  })
-
-  console.log(props.location.state.content)
-  
-    return (
-      <div className="row editor-wrapper">
-        <div className="col-sm-2 col-md-3 col-xl-2" />
-        <div className="col-sm-8 col-md-6 col-xl-8">
-          <h2 className="heading">You can start to write!</h2>
-          <div className="editor-frame title-wrapper mt-5" style={{textAlign:"center"}}>
-            <CKEditor
-              editor={InlineEditor}
-              config={titleEditorConfiguration}
-              data={props.location.state.title}
-              onInit={editor => {
-                // You can store the "editor" and use when it is needed.
-                console.log("Editor is ready to use!", editor);
-              }}
-              onChange={(event, editor) => {
-                const title = editor.getData();
-                setState({
-                  title: title
-                });
-              }}
-            />
-          </div>
-          <div className="editor-frame mt-3">
-            <CKEditor
-              editor={InlineEditor}
- 
-              data={props.location.state.content}
-              onInit={editor => {
-                // You can store the "editor" and use when it is needed.
-                console.log("Editor is ready to use!", editor);
-              }}
-              onChange={(event, editor) => {
-                const content = editor.getData();
-                console.log({ content });
-                setState({
-                  content:{content}
-                });
-              }}
-            />
-          </div>
-          <div className=" button-wrapper mt-10">
-            <Link
-              to={{
-                pathname: "/post-preview",
-                state: {
-                  title: {title},
-                  content: {content}
-                }
-              }}
-            >
-              <button
-                href=""
-                className="genric-btn primary-border circle arrow"
-              >
-                Preview
-              </button>
-            </Link>
-
-            <button href="" className="genric-btn primary-border circle arrow">
-              Submit
-              <span className="lnr lnr-arrow-right" />
-            </button>
-          </div>
-        </div>
-        <div className="col-sm-2 col-md-3 col-xl-2" />
-      </div>
-    );
-  }
-
-
+}

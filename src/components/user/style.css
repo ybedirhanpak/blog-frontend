@@ -24,18 +24,10 @@
   width:25%;
 }
 
-.profileImage{
-  border-radius:25px;
-  width: 15rem;
-  height: 15rem;
-}
 
 .stayTop{
   position:sticky;
-  top:0;
-  padding:auto;
-  z-index: 1000;
-  text-align: center;
+  top:5rem;
 }
 
 .delete:hover{
@@ -97,26 +89,64 @@
   padding: 1rem 2rem;
 }
 
+#stayTop1 {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  transition: all 0.5s;
+  background: #f5f6fa;
+}
 
 
+#stayTop1.stayTop1-scrolled {
+  background: #7c32ff;
+  transition: all 0.5s;
+  margin-top: 0;
+}
+#stayTop1.stayTop1-scrolled .nav-menu a {
+  color: #fff;
+}
+#stayTop1.stayTop1-scrolled .nav-menu ul li a {
+  color: #000000;
+}
 
-.mydivouter{
-  position:relative;
- }
- .mydivoverlap{
-     position: relative;
-     z-index: 1;
- }
- .mybuttonoverlap{
-  position: absolute;
-     z-index: 2;
-     top: 40%;
-     background-color: antiquewhite;
-     display: none;
-     left: 40%; 
- }
- .mydivouter:hover .mybuttonoverlap{ 
-  display:block;
-  background-color: antiquewhite;
+@media (max-width: 673px) {
+  #logo {
+    margin-left: 20px;
+  }
+}
+#stayTop1 #logo h1 {
+  font-size: 34px;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
 
- }
+#stayTop1 #logo h1 a,
+#stayTop1 #logo h1 a:hover {
+  color: #fff;
+  padding-left: 10px;
+  border-left: 4px solid #7c32ff;
+}
+
+#stayTop1 #logo img {
+  padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  #stayTop1 #logo h1 {
+    font-size: 28px;
+  }
+
+  #stayTop1 #logo img {
+    max-height: 40px;
+  }
+}
+
+.rowFix{
+  margin:0 !important;
+}
